@@ -1,72 +1,8 @@
-//using UnityEngine;
-
-///// <summary>
-///// Spawns 3 cubes at fixed positions with random colors.
-///// Randomly picks one cube as the correct answer.
-///// </summary>
-//public class CubeManager : MonoBehaviour
-//{
-//    [Header("Cube Settings")]
-//    [SerializeField] private GameObject cubePrefab;
-
-//    // Three positions where cubes will spawn
-//    [SerializeField]
-//    private Vector3[] spawnPositions = new Vector3[]
-//    {
-//        new Vector3(-2.5f, 0.5f, 5f),
-//        new Vector3( 0f,   0.5f, 5f),
-//        new Vector3( 2.5f, 0.5f, 5f)
-//    };
-
-//    private void Start()
-//    {
-//        SpawnCubes();
-//    }
-
-//    private void SpawnCubes()
-//    {
-//        // Randomly pick which cube is correct
-//        int correctIndex = Random.Range(0, spawnPositions.Length);
-
-//        for (int i = 0; i < spawnPositions.Length; i++)
-//        {
-//            // Spawn cube at position
-//            GameObject cubeObj = Instantiate(
-//                cubePrefab,
-//                spawnPositions[i],
-//                Quaternion.identity
-//            );
-
-//            cubeObj.name = $"Cube_{i}";
-
-//            // Get the CubeInteractable component
-//            CubeInteractable cube = cubeObj.GetComponent<CubeInteractable>();
-
-//            // Give it a random color (avoiding white so it
-//            // doesn't look like the success state)
-//            Color randomColor = new Color(
-//                Random.Range(0.2f, 0.9f),
-//                Random.Range(0.2f, 0.9f),
-//                Random.Range(0.2f, 0.9f)
-//            );
-
-//            cube.SetColor(randomColor);
-
-//            // Mark correct cube
-//            cube.isCorrect = (i == correctIndex);
-//        }
-//    }
-//}
-
-
-
-
-
 using UnityEngine;
 
 /// <summary>
 /// Spawns interactable objects at defined positions.
-/// Accepts an ARRAY of prefabs — so tomorrow you can add
+/// Accepts an ARRAY of prefabs â€” so tomorrow you can add
 /// 25 different objects just by dragging them into the
 /// Inspector. Zero code changes needed.
 /// </summary>
@@ -97,7 +33,7 @@ public class CubeManager : MonoBehaviour
     /// </summary>
     private void SpawnObjects()
     {
-        // Guard clause — nothing to spawn
+        // Guard clause â€” nothing to spawn
         if (interactablePrefabs == null
             || interactablePrefabs.Length == 0)
         {
